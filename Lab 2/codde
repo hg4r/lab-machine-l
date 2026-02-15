@@ -1,0 +1,11 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv('bank-full.csv', sep=';')  
+print(df.shape)
+print(df.head())
+print(df.dtypes)
+df['job'].value_counts().plot.pie(autopct='%1.1f%%', figsize=(6,6))
+plt.title('Distribution of Jobs')
+plt.show()
+plt.savefig('analysis_chart.png')
